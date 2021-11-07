@@ -1,4 +1,4 @@
-ABOUT THIS PROJECT
+# About this Project
 
 This is a fun Pomodoro App created using create-react-app
 
