@@ -1,7 +1,7 @@
 import React, {useState, useRef} from "react";
 import "./App.css";
 import AlarmStart from "./audio/AlarmStart.mp3";
-// import AlarmUp from "./audio/AlarmUp.mp3";
+import AlarmUp from "./audio/AlarmUp.mp3";
 import {Howl} from "howler";
 
 // the padStart is used to add an additional 0 to the front of the timer number
@@ -32,10 +32,8 @@ function App() {
     setTitle('Your time began!');
     setIsRunning(true);
     soundPlay(AlarmStart);
-    /* creating an interval with useRef, makes it have the
-      same value with when u want to clear the interval; it kind-of
-      creates a link to that interval. To use useRef,
-      you have to store it into .current
+    /* creating an interval with useRef, makes it have the same value with when u want to clear the interval; it kind-of
+      creates a link to that interval. To use useRef, you have to store it into .current
       */
     intervalRef.current = setInterval(() => {
       setTimeLeft(timeLeft => {
@@ -57,6 +55,7 @@ function App() {
     intervalRef.current = null;
     setTitle('Timer Stopped');
     setIsRunning(false);
+    // soundPlay(AlarmUp);
   }
 
   function resetTimer(){
